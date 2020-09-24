@@ -1,0 +1,41 @@
+<template lang="pug">
+.page3
+  img.so.so-0(src="@|page1-79.png|")
+  img.so.so-1()
+  img.so.so-2(src="@|250.png|" go="page2//rotatePushBottom/rotatePullTop&&ontop/true")
+</template>
+<script>
+module.exports = {
+  show: function () {
+    if (!owo.script.page2.data.itemList) owo.script.page2.data.itemList = document.querySelectorAll('.bottom-menu .item')
+    const item = owo.script.page2.data.itemList[owo.script.page2.data.activeIndex]
+    console.log(item)
+    this.query('.so-1').src = item.query('.icon').src
+  }
+}
+</script>
+<style lang="less">
+.page3 {
+  background-image: url('@|page2-138.jpg|');
+}
+.so {
+  position: absolute;
+}
+.so-0 {
+  left: 39px;
+  top: 198px;
+  z-index: 2;
+  width: 183px;
+  height: 106px;
+}
+.so-1 {
+  left: 350px;
+  top: 188px;
+  z-index: 1;
+}
+.so-2 {
+  left: 644px;
+  top: 235px;
+  z-index: 0;
+}
+</style>

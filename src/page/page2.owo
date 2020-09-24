@@ -1,0 +1,232 @@
+<template lang="pug">
+.page2
+  img.so.so-2.right-logo(src="@|local-1.png|")
+  img.so.so-0(src="@|page2-142.png|" o-tap="prev")
+  img.so.so-1(src="@|page2-141.png|" o-tap="next")
+  //- 左侧显示的大字
+  .left-big-font(font="HYXuJingXingKaiW.ttf") 美丽中国
+  //- 卡片列表
+  .card-box
+    .card-item.card-1(style="background-color: #e1e3e0;")
+    .card-item.card-2(style="background-color: #4b563c;")
+    .card-item.card-3(o-tap="showInfo()")
+      img.show-image
+  //- 底部选择菜单
+  .bottom-menu.clear
+    .item.item-1(o-tap="changeActive(0)")
+      .text(font="HYXuJingXingKaiW.ttf") 美丽中国
+      .active-line
+      .edit
+        .active-color 4b563c
+        img.show-img(src="@|image-1.png|")
+        img.icon(src="@|local-1.png|")
+    .item.item-2(o-tap="changeActive(1)")
+      .text(font="HYXuJingXingKaiW.ttf") 活力中国
+      .active-line
+      .edit
+        .active-color d1b060
+        img.icon(src="@|local-2.png|")
+        img.show-img(src="@|image-2.png|")
+    .item.item-3(o-tap="changeActive(2)")
+      .text(font="HYXuJingXingKaiW.ttf") 和谐中国
+      .active-line
+      .edit
+        .active-color 80a5ef
+        img.icon(src="@|local-3.png|")
+        img.show-img(src="@|image-3.png|")
+    .item.item-4(o-tap="changeActive(3)")
+      .text(font="HYXuJingXingKaiW.ttf") 乡土中国
+      .active-line
+      .edit
+        .active-color 477e6b
+        img.icon(src="@|local-4.png|")
+        img.show-img(src="@|image-4.png|")
+    .item.item-5(o-tap="changeActive(4)")
+      .text(font="HYXuJingXingKaiW.ttf") 文化中国
+      .active-line
+      .edit
+        .active-color ead197
+        img.icon(src="@|local-5.png|")
+        img.show-img(src="@|image-4.png|")
+    .item.item-6(o-tap="changeActive(5)")
+      .text(font="HYXuJingXingKaiW.ttf") 创新中国
+      .active-line
+      .edit
+        .active-color a793a1
+        img.icon(src="@|local-6.png|")
+        img.show-img(src="@|image-6.png|")
+</template>
+<script>
+module.exports = {
+  data: {
+    activeIndex: 0,
+    itemList: null
+  },
+  created: function () {
+    this.data.itemList = this.queryAll('.bottom-menu .item')
+    this.changeActive(0, true)
+    // document.querySelector('.logo').classList.add('move')
+    // owo.go('page3//rotatePushTop/rotatePullBottom&&ontop/true/rotatePushBottom/rotatePullTop&&ontop')
+  },
+  next: function () {
+    if (this.data.itemList[this.data.activeIndex + 1]) {
+      this.changeActive(++this.data.activeIndex)
+    } else {
+      owo.tool.toast('已经是最后一项了!')
+    }
+  },
+  prev: function () {
+    if (this.data.itemList[this.data.activeIndex - 1]) {
+      this.changeActive(--this.data.activeIndex)
+    } else {
+      owo.tool.toast('已经是第一项了!')
+    }
+  },
+  changeActive: function (ind, start) {
+    const itemList = this.data.itemList
+    for (const key in itemList) {
+      if (itemList.hasOwnProperty(key)) {
+        const element = itemList[key];
+        element.classList.remove('active')
+      }
+    }
+    if (itemList[ind]) {
+      // 如果不是页面刚启动使用特效
+      itemList[ind].classList.add('active')
+      // console.log(itemList[ind].query('.text'))
+      const leftBigFont = this.query('.left-big-font')
+      leftBigFont.innerText = itemList[ind].query('.text').innerText
+      // 更换颜色
+      const color = '#' + itemList[ind].query('.active-color').innerText
+      leftBigFont.style.color = color
+      const card2 = this.query('.card-box .card-2')
+      if (start) {
+        this.query('.right-logo').src = itemList[ind].query('.icon').src
+        this.query('.card-3 img').src = itemList[ind].query('.show-img').src
+      } else {
+        card2.classList.add('fly-ani')
+        setTimeout(() => {
+          card2.style.backgroundColor = color
+        }, 550);
+        setTimeout(() => {
+          card2.classList.remove('fly-ani')
+        }, 1100);
+        owo.tool.fadeChangeImage(this.query('.right-logo'), itemList[ind].query('.icon').src, 500)
+        // 改变大图
+        owo.tool.fadeChangeImage(this.query('.card-3 img'), itemList[ind].query('.show-img').src, 500)
+      }
+      
+    }
+    
+    // console.log(this.$target)
+  },
+}
+</script>
+<style lang="less">
+.page2 {
+  background-image: url('@|page2-138.jpg|');
+}
+.so {
+  position: absolute;
+}
+.so-0 {
+  left: 31px;
+  top: 710px;
+  z-index: 1;
+}
+.so-1 {
+  left: 671px;
+  top: 710px;
+  z-index: 99;
+}
+.so-2 {
+  left: 592px;
+  top: 206px;
+  z-index: 0;
+}
+.card-box {
+  position: absolute;
+  width: 700px;
+  height: 600px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.card-item {
+  width: 471px;
+  height: 691px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.card-1 {
+  transform: rotate(3deg);
+  transition: opacity 1s;
+}
+.card-2 {
+  transform: rotate(-11deg);
+  width: 445px;
+  height: 651px;
+  transition: opacity 1s;
+}
+.card-3 {
+  width: 408px;
+  height: 635px;
+  cursor: pointer;
+  transition: width 1s, height 1s;
+  .show-image {
+    transition: opacity 1s;
+  }
+}
+.bottom-menu {
+  display: none;
+}
+.left-big-font {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 44px;
+  bottom: 185px;
+  margin: 0 auto;
+  line-height: 80px;
+  height: 80px;
+  transition: top 1s;
+  text-align: center;
+}
+@keyframes anni {
+  0%{
+    transform: rotate(-11deg);
+    opacity: 1;
+  }
+  10% {
+    transform: rotate(-20deg) translateY(-200px);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-40deg) translateY(-800px);
+    opacity: 0;
+  }
+  60% {
+    transform: rotate(-40deg) translateY(600px);
+    opacity: 0;
+  }
+  90% {
+    transform: rotate(-20deg) translateY(200px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-11deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+.fly-ani {
+  animation: anni 1s 1 0s linear;
+}
+</style>

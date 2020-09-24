@@ -1,0 +1,55 @@
+<template lang="pug">
+.page-1
+  img.so.so-0(src="@|page1-59.png|")
+  img.so.so-1(src="@|page1-79.png|")
+  img.so.so-2(src="@|page1-80.png|")
+  p(font="HYXuJingXingKaiW.ttf") 生生不息的千年梦想孜孜奋斗的百年承诺决胜2020翘首2035
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      owo.tool.typing(this.query('p'), '生生不息的千年梦想<br>孜孜奋斗的百年承诺<br>决胜2020&emsp;翘首2035')
+      setTimeout(() => {
+        owo.go('page2//rotateRightSideFirst/moveFromRight&&delay200')
+      }, 4000);
+    }
+  }
+</script>
+
+
+<style lang="less">
+.page-1 {
+  background-image: url('@|page1-82.jpg|');
+}
+.so {
+  position: absolute;
+}
+.so-0 {
+  left: 36px;
+  top: 218px;
+  z-index: 2;
+}
+.so-1 {
+  left: 95px;
+  top: 418px;
+  z-index: 1;
+}
+.so-2 {
+  left: 248px;
+  top: 1104px;
+  z-index: 0;
+}
+p {
+  position: absolute;
+  left: 34px;
+  right: 0;
+  top: 845px;
+  font-size: 48px;
+  line-height: 64px;
+  text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  color: #b90105;
+}
+</style>
