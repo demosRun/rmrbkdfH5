@@ -1,7 +1,8 @@
 <template lang="pug">
 .page-1
   img.so.so-0(src="@|page1-59.png|")
-  img.so.so-1(src="@|page1-79.png|")
+  img.so.so-1(src="@|logoh5.webp|")
+  .iphone-logo
   img.so.so-2(src="@|page1-80.png|")
   p(font="HYXuJingXingKaiW.ttf") 生生不息的千年梦想孜孜奋斗的百年承诺决胜2020翘首2035
 </template>
@@ -9,10 +10,16 @@
 <script>
   module.exports = {
     created: function () {
-      owo.tool.typing(this.query('p'), '生生不息的千年梦想<br>孜孜奋斗的百年承诺<br>决胜2020&emsp;翘首2035')
+      if (isiOS) {
+        this.query('.so-1').style.display = 'none'
+        this.query('.iphone-logo').style.display = 'block'
+      }
       setTimeout(() => {
-        owo.go('page2//rotateRightSideFirst/moveFromRight&&delay200')
-      }, 4000);
+        owo.tool.typing(this.query('p'), '生生不息的千年梦想<br>孜孜奋斗的百年承诺<br><div><span>决胜2020</span><span>翘首2035</span></div>')
+      }, 2000);
+      setTimeout(() => {
+        owo.go('page2//rotateRightSideFirst/moveFromRight&&delay200/true')
+      }, 10000);
     }
   }
 </script>
@@ -31,8 +38,9 @@
   z-index: 2;
 }
 .so-1 {
-  left: 95px;
-  top: 418px;
+  left: 14px;
+  right: 0;
+  top: 249px;
   z-index: 1;
 }
 .so-2 {
@@ -42,14 +50,38 @@
 }
 p {
   position: absolute;
-  left: 34px;
+  left: 48px;
   right: 0;
   top: 845px;
   font-size: 48px;
   line-height: 64px;
-  text-align: center;
-  width: 500px;
+  text-align: left;
+  width: 446px;
   margin: 0 auto;
   color: #b90105;
+  text-align: center;
+  div {
+    display: flex;
+    padding-right: 16px;
+    padding-left: 6px;
+    justify-content: space-between;
+  }
+}
+.iphone-logo {
+  background-image: url('@|iphonelogo.png|');
+  display: block;
+  height: 750px;
+  width: 750px;
+  left: 14px;
+  right: 0;
+  top: 249px;
+  position: absolute;
+  margin: auto;
+  background-size: auto 750px;
+  background-position: 0 0;
+  -webkit-animation: ani steps(25) 2s 1;
+}
+@-webkit-keyframes ani {
+  100% {background-position: 18750px 0;}
 }
 </style>

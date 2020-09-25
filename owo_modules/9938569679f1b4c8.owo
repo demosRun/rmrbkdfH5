@@ -1,0 +1,64 @@
+<template lang="pug">
+.swiper-panel.clear.panel.w1000
+    .fl
+      plug(_name="module76" _src="https://template.owo.ink/7f0325fd11aa9030.owo")
+    .fr
+        h2
+            a(href="#") 标题标题标题标题标题标题标标题
+        p 如何准确理解把握习总书记重要讲话的精神内涵？如何使主题教育活动落实更有实效？中央党史和文献研究院研究员黄一兵对习近平重要讲话内容进行的解读。
+        h2
+            a(href="#") 标题标题标题标题标标题标题标题
+        p 如何准确理解把握习总书记重要讲话的精神内涵？如何使主题教育活动落实更有实效？中央党史和文献研究院研究员黄一兵对习近平重要讲话内容进行的解读。
+        ul
+            li
+                a(href="#") 标题标题标题标题标题标题标题标题
+            li
+                a(href="#") 标题标题标题标题标题标题标题标题
+            li
+                a(href="#") 标题标题标题标题标题标题标题标题
+</template>
+
+
+<style lang="less">
+.swiper-panel {
+  h2, h2 a {
+    display: block;
+    color: #1c1b1b;
+    font-size: 24px;
+    line-height: 44px;
+  }
+  .fl {
+    width: 625px;
+    height: 390px;
+    background-color: #ccc;
+  }
+  .fr {
+    width: 360px;
+    height: 390px;
+    float: right;
+    overflow: hidden;
+  }
+  li, li a {
+    color: #484848;
+    font-size: 16px;
+    line-height: 35px;
+    height: 35px;
+    overflow: hidden;
+  }
+  li {
+    padding-left: 10px;
+    background-image: url(https://cunchu.site/upload/9e5aeff4f3bfcf87.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  p {
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 28px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: #333333;
+  }
+}
+</style>

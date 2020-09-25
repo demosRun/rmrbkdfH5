@@ -3,6 +3,12 @@
   img.so.so-0(src="@|page1-79.png|")
   img.so.so-1()
   img.so.so-2(src="@|250.png|" go="page2//rotatePushBottom/rotatePullTop&&ontop/true")
+  .html-panel
+    .title
+    p.text 70年砥砺奋进，70年破浪前行。2019年是新中国成立70周年，中国成就备受世界瞩目。这一年，习近平主席在多个国内外高光时刻讲述中国发展故事，以坚定自信的政治气魄、大国领袖的责任担当，深入思考人类前途命运，引领自信的中国阔步走向世界。
+    plug(_name="module185" _src="https://template.owo.ink/9938569679f1b4c8.owo")
+    //- 底部cardList
+    plug(_name="module147" _src="https://template.owo.ink/ef186f45ad9e3ef0.owo")
 </template>
 <script>
 module.exports = {
@@ -11,6 +17,7 @@ module.exports = {
     const item = owo.script.page2.data.itemList[owo.script.page2.data.activeIndex]
     console.log(item)
     this.query('.so-1').src = item.query('.icon').src
+    owo.tool.toast('点击右上角按钮返回')
   }
 }
 </script>
@@ -37,5 +44,97 @@ module.exports = {
   left: 644px;
   top: 235px;
   z-index: 0;
+}
+.swiper-panel .fl, .swiper-panel .fr {
+  float: none;
+}
+.html-panel {
+  width: 90%;
+  position: absolute;
+  height: 950px;
+  top: 365px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  padding: 0 3%;
+}
+.text {
+  font-size: 32px;
+  line-height: 42px;
+  text-indent: 2em;
+  color: #333333;
+}
+.swiper-panel {
+  margin-top: 20px;
+  .fl {
+    width: 100%;
+    height: 107vw;
+  }
+  .fr {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+    h2, a {
+      font-size: 30px;
+      line-height: 62px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 40px;
+    }
+    ul {
+      display: none;
+    }
+  }
+}
+.card-list {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  white-space: nowrap;
+  li {
+    width: 45%;
+    height: 120vw;
+    margin-right: 3%;
+    float: none;
+    display: inline-block;
+    img, a {
+      width: 100%;
+      height: 100%;
+    }
+    p {
+      line-height: 60px;
+      display: block;
+      height: 60px;
+      position: absolute;
+      width: 92%;
+      color: white;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(6, 0, 0, 0.6) 100%);
+      bottom: 0;
+      text-align: left;
+      padding: 0 4%;
+      font-size: 28px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      font-weight: bold;
+    }
+  }
+  li:before{
+    content:"";
+    background-image:url('@|playbutton.png|');
+    position: absolute;
+    width: 56px;
+    bottom: 60px;
+    left: 10px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+.text, .fl {
+  display: none;
 }
 </style>

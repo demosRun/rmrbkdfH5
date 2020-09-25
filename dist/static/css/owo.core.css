@@ -55,62 +55,6 @@ li {
   list-style: none;
 }
 
-.loading-box {
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
-}
-
-.loading-box .loading {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -16%;
-  bottom: 0;
-  margin: auto;
-}
-
-.loading-box .loading-bar {
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  height: 20px;
-  background-color: white;
-  width: 80%;
-  margin: auto;
-  left: 0;
-  right: 0;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 2px 3px 9px #5d739c;
-}
-
-.loading-box .num-bar {
-  background-color: #e47d6e;
-  height: 20px;
-  border-radius: 20px;
-  width: 0%;
-  transition: width 0.5s;
-}
-
-.loading-box .num,
-.loading-box .text {
-  position: absolute;
-  top: 0%;
-  bottom: -8%;
-  margin: auto;
-  line-height: 50px;
-  height: 50px;
-  font-size: 36px;
-  width: 100%;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-}
-
-.loading-box .text {
-  bottom: -14%;
-}
             [font="HYXuJingXingKaiW"] {
               font-family: 'HYXuJingXingKaiW';
             }
@@ -138,8 +82,9 @@ li {
 }
 
 .page-1 .so-1 {
-  left: 95px;
-  top: 418px;
+  left: 14px;
+  right: 0;
+  top: 249px;
   z-index: 1;
 }
 
@@ -151,15 +96,44 @@ li {
 
 .page-1 p {
   position: absolute;
-  left: 34px;
+  left: 48px;
   right: 0;
   top: 845px;
   font-size: 48px;
   line-height: 64px;
-  text-align: center;
-  width: 500px;
+  text-align: left;
+  width: 446px;
   margin: 0 auto;
   color: #b90105;
+  text-align: center;
+}
+
+.page-1 p div {
+  display: flex;
+  padding-right: 16px;
+  padding-left: 6px;
+  justify-content: space-between;
+}
+
+.page-1 .iphone-logo {
+  background-image: url('../resource/iphonelogo.png');
+  display: block;
+  height: 750px;
+  width: 750px;
+  left: 14px;
+  right: 0;
+  top: 249px;
+  position: absolute;
+  margin: auto;
+  background-size: auto 750px;
+  background-position: 0 0;
+  -webkit-animation: ani steps(25) 2s 1;
+}
+
+@-webkit-keyframes ani {
+  100% {
+    background-position: 18750px 0;
+  }
 }
 .page2 {
   background-image: url('../resource/page2-138.jpg');
@@ -183,7 +157,7 @@ li {
 
 .page2 .so-2 {
   left: 592px;
-  top: 206px;
+  top: 220px;
   z-index: 0;
 }
 
@@ -242,7 +216,7 @@ li {
   left: 0;
   right: 0;
   font-size: 44px;
-  bottom: 185px;
+  bottom: 220px;
   margin: 0 auto;
   line-height: 80px;
   height: 80px;
@@ -318,6 +292,190 @@ li {
   -webkit-animation: anni 1s 1 0s linear;
           animation: anni 1s 1 0s linear;
 }
+.swiper-container-p2 {
+  position: relative;
+  width: 100%;
+  height: 107vw;
+  margin: 0 auto;
+  overflow: hidden;
+  color: white;
+}
+
+.swiper-container-p2 .swiper-slide {
+  width: 100%;
+  height: 107vw;
+  position: relative;
+}
+
+.swiper-container-p2 .swiper-slide a,
+.swiper-container-p2 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container-p2 .swiper-slide span {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 64px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 64px;
+  font-size: 16px;
+}
+
+.swiper-container-p2 .prev {
+  background: url(http://www.people.com.cn/img/2016people/images/focus_left_b.png);
+  width: 18px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+  bottom: 18px;
+  left: 70px;
+  z-index: 10;
+}
+
+.swiper-container-p2 .next {
+  background: url(http://www.people.com.cn/img/2016people/images/focus_right_b.png);
+  width: 18px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+  bottom: 18px;
+  right: 70px;
+  z-index: 10;
+}
+
+.swiper-container-p2 .swiper-pagination1 {
+  display: none;
+}
+
+.swiper-container-p2 .num1 {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  position: absolute;
+  left: 15%;
+  bottom: 7px;
+  line-height: 200%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.swiper-container-p2 .num1 i em {
+  color: #fff;
+  margin-left: 2px;
+}
+
+.swiper-container-p2 .num1 i em.thisp {
+  font-size: 28px;
+  color: #e71f18;
+  margin-right: 1px;
+  margin-left: 0;
+}
+.swiper-panel h2,
+.swiper-panel h2 a {
+  display: block;
+  color: #1c1b1b;
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.swiper-panel .fl {
+  width: 625px;
+  height: 390px;
+  background-color: #ccc;
+}
+
+.swiper-panel .fr {
+  width: 360px;
+  height: 390px;
+  float: right;
+  overflow: hidden;
+}
+
+.swiper-panel li,
+.swiper-panel li a {
+  color: #484848;
+  font-size: 16px;
+  line-height: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.swiper-panel li {
+  padding-left: 10px;
+  background-image: url(https://cunchu.site/upload/9e5aeff4f3bfcf87.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.swiper-panel p {
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 28px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: #333333;
+}[o-hover="grow"] {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+[o-hover="grow"]:hover, [o-hover="grow"]:focus, [o-hover="grow"]:active {
+  transform: scale(1.1);
+}
+
+.card-list :after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.card-list {
+  width: 1000px;
+  height: auto;
+}
+
+.card-list li {
+  float: left;
+  margin-right: 29px;
+  margin-bottom: 15px;
+}
+
+.card-list li img {
+  width: 314px;
+  height: 200px;
+  display: block;
+}
+
+.card-list li p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 20px;
+  overflow: hidden;
+  height: 20px;
+  color: black;
+}
+
+.card-list li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card-list li:nth-child(3n) {
+  margin-right: 0;
+}
 .page3 {
   background-image: url('../resource/page2-138.jpg');
 }
@@ -346,8 +504,116 @@ li {
   z-index: 0;
 }
 
+.page3 .swiper-panel .fl,
+.page3 .swiper-panel .fr {
+  float: none;
+}
 
+.page3 .html-panel {
+  width: 90%;
+  position: absolute;
+  height: 950px;
+  top: 365px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  padding: 0 3%;
+}
 
+.page3 .text {
+  font-size: 32px;
+  line-height: 42px;
+  text-indent: 2em;
+  color: #333333;
+}
+
+.page3 .swiper-panel {
+  margin-top: 20px;
+}
+
+.page3 .swiper-panel .fl {
+  width: 100%;
+  height: 107vw;
+}
+
+.page3 .swiper-panel .fr {
+  width: 100%;
+  margin-top: 20px;
+  height: auto;
+}
+
+.page3 .swiper-panel .fr h2,
+.page3 .swiper-panel .fr a {
+  font-size: 30px;
+  line-height: 62px;
+}
+
+.page3 .swiper-panel .fr p {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.page3 .swiper-panel .fr ul {
+  display: none;
+}
+
+.page3 .card-list {
+  width: 100%;
+  overflow: auto;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.page3 .card-list li {
+  width: 45%;
+  height: 120vw;
+  margin-right: 3%;
+  float: none;
+  display: inline-block;
+}
+
+.page3 .card-list li img,
+.page3 .card-list li a {
+  width: 100%;
+  height: 100%;
+}
+
+.page3 .card-list li p {
+  line-height: 60px;
+  display: block;
+  height: 60px;
+  position: absolute;
+  width: 92%;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(6, 0, 0, 0.6) 100%);
+  bottom: 0;
+  text-align: left;
+  padding: 0 4%;
+  font-size: 28px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  font-weight: bold;
+}
+
+.page3 .card-list li:before {
+  content: "";
+  background-image: url('../resource/playbutton.png');
+  position: absolute;
+  width: 56px;
+  bottom: 60px;
+  left: 10px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.page3 .text,
+.page3 .fl {
+  display: none;
+}
 /* 页面切换动画 */
 .o-page-rotatePushBottom {
 	-webkit-transform-origin: 50% 100%;

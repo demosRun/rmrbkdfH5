@@ -1,8 +1,8 @@
 <template lang="pug">
 .page2
   img.so.so-2.right-logo(src="@|local-1.png|")
-  img.so.so-0(src="@|page2-142.png|" o-tap="prev")
-  img.so.so-1(src="@|page2-141.png|" o-tap="next")
+  //- img.so.so-0(src="@|page2-142.png|" o-tap="prev")
+  //- img.so.so-1(src="@|page2-141.png|" o-tap="next")
   //- 左侧显示的大字
   .left-big-font(font="HYXuJingXingKaiW.ttf") 美丽中国
   //- 卡片列表
@@ -47,7 +47,7 @@
       .edit
         .active-color ead197
         img.icon(src="@|local-5.png|")
-        img.show-img(src="@|image-4.png|")
+        img.show-img(src="@|image-5.png|")
     .item.item-6(o-tap="changeActive(5)")
       .text(font="HYXuJingXingKaiW.ttf") 创新中国
       .active-line
@@ -65,8 +65,20 @@ module.exports = {
   created: function () {
     this.data.itemList = this.queryAll('.bottom-menu .item')
     this.changeActive(0, true)
+    owo.tool.toast('左右滑动切换城市!')
     // document.querySelector('.logo').classList.add('move')
     // owo.go('page3//rotatePushTop/rotatePullBottom&&ontop/true/rotatePushBottom/rotatePullTop&&ontop')
+    owo.tool.touch({
+      el: this.$el,
+      end: (event) => {
+        const swipeX = event.swipe[0]
+        if (swipeX < -100) {
+          this.next()
+        } else if (swipeX > 100) {
+          this.prev()
+        }
+      }
+    })
   },
   next: function () {
     if (this.data.itemList[this.data.activeIndex + 1]) {
@@ -141,7 +153,7 @@ module.exports = {
 }
 .so-2 {
   left: 592px;
-  top: 206px;
+  top: 220px;
   z-index: 0;
 }
 .card-box {
@@ -192,7 +204,7 @@ module.exports = {
   left: 0;
   right: 0;
   font-size: 44px;
-  bottom: 185px;
+  bottom: 220px;
   margin: 0 auto;
   line-height: 80px;
   height: 80px;

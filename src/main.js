@@ -3,9 +3,9 @@ function scrollIntoView () {
 }
 
 // 阻止微信拖动
-document.body.addEventListener('touchmove', function (e) {
-  e.preventDefault() // 阻止默认的处理方式(阻止下拉滑动的效果)
-}, {passive: false})
+// document.body.addEventListener('touchmove', function (e) {
+//   e.preventDefault() // 阻止默认的处理方式(阻止下拉滑动的效果)
+// }, {passive: false})
 
 window.onload = function(){
   autoScale({
@@ -23,3 +23,7 @@ function showInfo () {
   // go('page3//rotatePushTop/rotatePullBottom&&ontop/true/rotatePushBottom/rotatePullTop&&ontop')
   owo.go('page3//rotatePushTop/rotatePullBottom&&ontop/true/rotatePushBottom/rotatePullTop&&ontop')
 }
+
+var u = navigator.userAgent;
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端

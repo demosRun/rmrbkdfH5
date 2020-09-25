@@ -79,6 +79,10 @@
 			"resource": true
 		},
 		{
+			"name": "apng-canvas.min",
+			"src": "./src/resource/apng-canvas.min.js"
+		},
+		{
 			"name": "autoScale",
 			"src": "https://cunchu.site/owo/plug/autoScale.js"
 		},
@@ -96,6 +100,11 @@
 			"name": "toast",
 			"afterbody": true,
 			"src": "./owo_modules/toast.js"
+		},
+		{
+			"name": "touch",
+			"afterbody": true,
+			"src": "./owo_modules/touch.js"
 		}
 	],
 	"styleList": [
@@ -106,11 +115,6 @@
 		}
 	],
 	"pageList": [
-		{
-			"name": "loading",
-			"src": "https://template.owo.ink/92b4d6353335b930.owo",
-			"type": "page"
-		},
 		{
 			"name": "page1",
 			"src": "./src/page/page1.owo",
@@ -124,21 +128,6 @@
 		{
 			"name": "page3",
 			"src": "/src/page/page3.owo",
-			"type": "page"
-		},
-		{
-			"name": "page4",
-			"src": "/src/page/page4.owo",
-			"type": "page"
-		},
-		{
-			"name": "page5",
-			"src": "/src/page/page5.owo",
-			"type": "page"
-		},
-		{
-			"name": "page6",
-			"src": "/src/page/page6.owo",
 			"type": "page"
 		}
 	],
