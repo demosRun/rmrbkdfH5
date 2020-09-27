@@ -31,6 +31,15 @@
 
 <body>
   <div class="scale-box">
+    <!-- 页面[loading]-->
+    <div class="loading-box page" template="loading" style="display: none;">
+      <img class="loading" src="./static/resource/page1-59.png">
+      <div class="loading-bar">
+        <div class="num-bar"></div>
+      </div>
+      <span class="text">Loading</span>
+      <div class="num">0%</div>
+    </div>
     <!-- 页面[page1]-->
     <div class="page-1 page" template="page1" style="display: none;">
       <img class="so so-0" src="./static/resource/page1-59.png">
@@ -64,7 +73,7 @@
           <div class="text" font="HYXuJingXingKaiW">活力中国</div>
           <div class="active-line"></div>
           <div class="edit">
-            <div class="active-color">d1b060</div>
+            <div class="active-color">fd8d41</div>
             <img class="icon" src="./static/resource/local-2.png">
             <img class="show-img" src="./static/resource/image-2.png">
           </div>
@@ -217,9 +226,63 @@
   <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript" charset="UTF-8">
     owo.script = {
+      "loading": {
+        "data": {
+          "imgList": ["./static/resource/image-5.png", "./static/resource/image-1.png", "./static/resource/page1-82.jpg", "./static/resource/image-3.png", "./static/resource/image-4.png", "./static/resource/image-2.png", "./static/resource/image-6.png", "./static/resource/page2-138.jpg", "./static/resource/page1-79.png", "./static/resource/page1-80.png", "./static/resource/page1-59.png", "./static/resource/local-2.png", "./static/resource/local-6.png", "./static/resource/local-1.png", "./static/resource/local-4.png", "./static/resource/local-3.png", "./static/resource/local-5.png", "./static/resource/250.png", "./static/resource/playbutton.png"]
+        },
+        "show": function show() {
+          if (isiOS) {
+            this.data.imgList.push('./static/resource/iphonelogo.png');
+          }
+
+          var mum = owo.query('.num')[0];
+          var numBar = owo.query('.num-bar')[0];
+          this.preloadImages(this.data.imgList, function(e) {
+            setTimeout(function() {
+              // owo.go({noBack: true,page: "page1"})
+              owo.go('page1//rotateRightSideFirst/moveFromRight&&delay200');
+            }, 500);
+          }, function(num) {
+            numBar.style.width = num + '%';
+            mum.innerHTML = num + '%';
+          });
+        },
+        "preloadImage": function preloadImage(src, successFn) {
+          var image = new Image();
+          image.src = src;
+
+          image.onload = function() {
+            successFn && successFn(src);
+          };
+
+          image.onerror = function(error) {
+            successFn && successFn(src);
+          };
+        },
+        "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+          var _this = this;
+
+          if (!Array.isArray(srcs)) {
+            console.log('第一个参数只能是一个数组');
+          } else {
+            var allCount = srcs.length;
+            var doneCount = 0;
+            srcs.forEach(function(srcItem) {
+              _this.preloadImage(srcItem, function() {
+                doneCount++;
+                progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
+
+                if (doneCount === allCount) {
+                  doneFn && doneFn();
+                }
+              });
+            });
+          }
+        }
+      },
       "page1": {
         "created": function created() {
-          var _this = this;
+          var _this2 = this;
 
           if (isiOS) {
             this.query('.so-1').style.display = 'none';
@@ -227,7 +290,7 @@
           }
 
           setTimeout(function() {
-            owo.tool.typing(_this.query('p'), '生生不息的千年梦想<br>孜孜奋斗的百年承诺<br><div><span>决胜2020</span><span>翘首2035</span></div>');
+            owo.tool.typing(_this2.query('p'), '生生不息的千年梦想<br>孜孜奋斗的百年承诺<br><div><span>决胜2020</span><span>翘首2035</span></div>');
           }, 2000);
           setTimeout(function() {
             owo.go('page2//rotateRightSideFirst/moveFromRight&&delay200/true');
@@ -240,7 +303,7 @@
           "itemList": null
         },
         "created": function created() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.data.itemList = this.queryAll('.bottom-menu .item');
           this.changeActive(0, true);
@@ -253,9 +316,9 @@
               var swipeX = event.swipe[0];
 
               if (swipeX < -100) {
-                _this2.next();
+                _this3.next();
               } else if (swipeX > 100) {
-                _this2.prev();
+                _this3.prev();
               }
             }
           });

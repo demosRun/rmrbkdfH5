@@ -55,6 +55,62 @@ li {
   list-style: none;
 }
 
+.loading-box {
+  width: 100%;
+  height: 100%;
+  background-image: url('../resource/page1-82.jpg');
+}
+
+.loading-box .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -22%;
+  bottom: 0;
+  margin: auto;
+}
+
+.loading-box .loading-bar {
+  position: absolute;
+  top: 0%;
+  bottom: 2%;
+  height: 20px;
+  background-color: white;
+  width: 80%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 2px 3px 9px #5d739c;
+}
+
+.loading-box .num-bar {
+  background-color: #687585;
+  height: 20px;
+  border-radius: 20px;
+  width: 0%;
+  transition: width 0.5s;
+}
+
+.loading-box .num,
+.loading-box .text {
+  position: absolute;
+  top: 0%;
+  bottom: -8%;
+  margin: auto;
+  line-height: 50px;
+  height: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+.loading-box .text {
+  bottom: -14%;
+}
             [font="HYXuJingXingKaiW"] {
               font-family: 'HYXuJingXingKaiW';
             }

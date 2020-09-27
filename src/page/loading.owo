@@ -1,6 +1,6 @@
 <template lang="pug">
 .loading-box
-  img.loading(src="https://cunchu.site/ozzx/resource/loadingLogo.png")
+  img.loading(src="@|page1-59.png|")
   .loading-bar
     .num-bar
   span.text Loading
@@ -11,10 +11,31 @@
   module.exports = {
     data: {
       imgList: [
-        ''
+        "@|image-5.png|",
+        "@|image-1.png|",
+        "@|page1-82.jpg|",
+        "@|image-3.png|",
+        "@|image-4.png|",
+        "@|image-2.png|",
+        "@|image-6.png|",
+        "@|page2-138.jpg|",
+        "@|page1-79.png|",
+        "@|page1-80.png|",
+        "@|page1-59.png|",
+        "@|local-2.png|",
+        "@|local-6.png|",
+        "@|local-1.png|",
+        "@|local-4.png|",
+        "@|local-3.png|",
+        "@|local-5.png|",
+        "@|250.png|",
+        "@|playbutton.png|",
       ]
     },
     show: function () {
+      if (isiOS) {
+        this.data.imgList.push('@|iphonelogo.png|')
+      }
       const mum = owo.query('.num')[0]
       const numBar = owo.query('.num-bar')[0]
       this.preloadImages(this.data.imgList, (e) => {
@@ -62,20 +83,20 @@
 .loading-box {
   width: 100%;
   height: 100%;
-  background-image: url('https://cunchu.site/ozzx/resource/lanse.jpg');
+  background-image: url('@|page1-82.jpg|');
 }
 .loading {
   position: absolute;
   left: 0;
   right: 0;
-  top: -16%;
+  top: -22%;
   bottom: 0;
   margin: auto;
 }
 .loading-bar {
   position: absolute;
   top: 0%;
-  bottom: 0%;
+  bottom: 2%;
   height: 20px;
   background-color: white;
   width: 80%;
@@ -87,7 +108,7 @@
   box-shadow: 2px 3px 9px #5d739c;
 }
 .num-bar {
-  background-color: #e47d6e;
+  background-color: #687585;
   height: 20px;
   border-radius: 20px;
   width: 0%;
@@ -103,7 +124,7 @@
   font-size: 36px;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #333;
   font-weight: bold;
 }
 .text {

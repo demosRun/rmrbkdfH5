@@ -18,7 +18,7 @@ owo.tool.typing = function (dom, text, time, finish, index) {
   time = time || 200
   index = index || 0
   function typing() {
-    if (index <= text.length) {
+    if (index <= text.length - 16) {
       // 如果是标点符号为了更字然增加打字间隔
       var tempTime = 0
       if ([',', '，', '”', '’', '.'].includes(text[index - 1])) {
